@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+
+<script>
+    /*   vue.js -> Vue 객체(컴포넌트)의 조합
+  
+      //Vue 객체의 속성
+      //공통 속성
+      data: Vue가 다룰 데이터 -> 프로퍼티(변수, CRUD가능)
+      computed: Vue가 다룰 데이터 -> 산출 프로퍼티(읽기 전용)
+              data 속성과 반드시 연결되어 있어야 함.(의존적)
+      watch: data 혹은 computed, 정의되어 있는 모든 프로퍼티 감시
+             변화가 발생 -> 미리 정의한 내용을 실행
+  
+      methods: Vue 안에서 사용할 모든 함수를 정의(주로 이벤트 핸들러)
+              대표적으로 click
+  
+      template: Vue 객체가 가지고 있는 tag(기본 배경)
+  
+          //props: 외부에서 들어오는 정보를 담는 프로퍼티
+          //$emit : 부모 컴포넌트에 있는 이벤트 발생
+   */
+</script>
+
+<div id="app">
+
+    <h3>참여자 명단 </h3>
+    <p>현재 참여자 수 : {{count}}명</p>
+    <input-component v-on: insert-user-info="counting"></input-component>
+</div>
+<script>
+    const printComponent = {
+        template: `<div>
+                <p> 이름 : {{name}}, 나이 : 만 {{age -1}}, :소속 : {{dept}}</p>
+                </div>`,
+        props: {
+            name: String,
+            age: {
+                type: number,
+                default: -1
+            },
+            dept: String
+        }
+    }
+
+
+
+
+</script>
+
+
+</html>

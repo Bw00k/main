@@ -48,8 +48,10 @@
                     //본인 자신을 가르키는 this를 vueObj에 넣어 줌.
                     const vueObj = this;
                     this.timerObj = setInterval(function () {
+
                         vueObj.limitTime--;
                     }, 1000)
+
                 }
             },
             watch: {
@@ -69,7 +71,7 @@
                         let pos = this.inputText.indexOf(keyword);
                         if (pos > -1) {
                             alert(this.forhiddenText + '는 입력할 수 없습니다.');
-                            this.forhiddenCnt++;
+                            this.forhiddenCnt++; //금지어 횟수추가
                             this.inputText = this.inputText.substr(0, pos);
                             this.limitTime += 10
                         }
